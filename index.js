@@ -6,7 +6,7 @@ const stream = require('stream');
 const gunzip = require('gunzip-maybe');
 const tar = require('tar-stream');
 
-const DEFAULT_ALG = 'sha256';
+const DEFAULT_ALG = 'sha1';
 
 const hash = (data, alg = DEFAULT_ALG) => {
   return crypto.createHash(alg).update(data).digest('hex');
