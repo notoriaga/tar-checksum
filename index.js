@@ -68,7 +68,7 @@ const generateChecksum = (tarball, callback) => {
  */
 module.exports = (tarball, callback) => {
   if (typeof callback === 'function') {
-    generateChecksum(tarball, callback);
+    return generateChecksum(tarball, callback);
   }
   return new Promise((resolve, reject) => {
     generateChecksum(tarball, (err, results) => {
