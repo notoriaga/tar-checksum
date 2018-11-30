@@ -17,42 +17,42 @@ const fixtures = require('./fixtures/index');
 test('With promise', async t => {
   let tgz = await readFilePromise(fixtures.MULTI_FILE_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
 test('With promise streaming', async t => {
   let tgz = createReadStream(fixtures.MULTI_FILE_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
 test('Long file names', async t => {
   let tgz = createReadStream(fixtures.LONG_NAME_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
 test('Latin1 tar', async t => {
   let tgz = createReadStream(fixtures.LATIN1_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
 test('Unicode tar', async t => {
   let tgz = createReadStream(fixtures.UNICODE_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
 test('One file tar', async t => {
   let tgz = createReadStream(fixtures.LATIN1_TAR);
   let checksum = await tarChecksum(tgz);
-  t.is(checksum.length, 64);
+  t.is(checksum.length, 40);
   t.snapshot(checksum);
 });
 
